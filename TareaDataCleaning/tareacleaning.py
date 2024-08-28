@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-data=pd.read_csv('game_info.csv', encoding='utf-8')
+data=pd.read_csv('game_info.csv')
 
 #Exploracion Inicial
 print(data.head())
@@ -30,7 +30,7 @@ for column in missing_string_columns:
 missing_number_columns=[  'playtime','metacritic', 'rating', 'rating_top','achievements_count', 'ratings_count', 'suggestions_count',  'reviews_count',
 'added_status_yet', 'added_status_owned', 'added_status_beaten', 'added_status_toplay', 'added_status_dropped', 'added_status_playing'] 
 
-for column in missing_string_columns:
+for column in missing_number_columns:
         data[column].fillna(0, inplace=True)
 
 #Juegos que tienen itch en su slug se quita y se agrega la pagina web        
